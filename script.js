@@ -17,35 +17,18 @@ document.querySelector(".next").addEventListener("click", () => {
   index = (index + 1) % imagens.length;
   atualizarSlide();
 });
-
 document.querySelector(".prev").addEventListener("click", () => {
   index = (index - 1 + imagens.length) % imagens.length;
   atualizarSlide();
 });
-
 function atualizarSlide() {
   slides.style.transform = `translateX(-${index * 100}%)`;
 }
-
-// Animação ao rolar
-const sections = document.querySelectorAll(".section");
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("aparecendo");
-    }
-  });
-}, { threshold: 0.2 });
-
-sections.forEach(section => {
-  observer.observe(section);
-});
 
 // Música
 const musica = document.getElementById('musica');
 const btnMusica = document.getElementById('btnMusica');
 let tocando = false;
-
 btnMusica.addEventListener('click', () => {
   if (!tocando) {
     musica.play();
@@ -58,13 +41,25 @@ btnMusica.addEventListener('click', () => {
   }
 });
 
+// Botão AMOR - abre e fecha mensagem
+const btnAmor = document.getElementById("btnAmor");
+const overlay = document.getElementById("mensagemAmor");
+const fecharMensagem = document.getElementById("fecharMensagem");
+
+btnAmor.addEventListener("click", () => {
+  overlay.style.display = "flex";
+});
+fecharMensagem.addEventListener("click", () => {
+  overlay.style.display = "none";
+});
+
 // Corações caindo
 function criarCoracao() {
   const coracao = document.createElement("div");
   coracao.classList.add("coracao");
   coracao.style.left = Math.random() * 100 + "vw";
   coracao.style.animationDuration = Math.random() * 2 + 3 + "s";
-  coracao.innerText = "💖";
+  coracao.innerText = ["💖","❤️","💕","💘"][Math.floor(Math.random()*4)];
   document.body.appendChild(coracao);
   setTimeout(() => coracao.remove(), 5000);
 }
