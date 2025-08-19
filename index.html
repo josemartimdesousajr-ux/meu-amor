@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nosso Amor ❤️</title>
   <link rel="stylesheet" href="style.css"/>
+  <!-- Fonte romântica -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="header">
@@ -47,18 +49,34 @@
     <p>Feito com muito amor 💕 por Você</p>
   </footer>
 
+  <!-- Música -->
   <audio id="musica" loop>
     <source src="audio.mp3" type="audio/mpeg">
   </audio>
   <button id="btnMusica">🎵 Tocar Música</button>
 
+  <!-- Botão AMOR -->
+  <button id="btnAmor">AMOR 💌</button>
+
+  <!-- Tela cheia da mensagem -->
+  <div id="mensagemAmor" class="overlay">
+    <div class="mensagem-conteudo">
+      <h2>💖 Eu Amo Muito Você 💖</h2>
+      <textarea readonly>
+Desde o momento em que você entrou na minha vida,
+meu coração encontrou um novo ritmo.
+Cada sorriso seu ilumina os meus dias,
+cada abraço seu me faz sentir em casa.
+
+Você é a razão da minha felicidade,
+o motivo dos meus sonhos mais lindos,
+a certeza que o amor verdadeiro existe,
+e que eu quero viver tudo com você. ❤️
+      </textarea>
+      <button id="fecharMensagem">Fechar ✖</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
